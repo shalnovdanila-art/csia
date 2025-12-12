@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 
-const API_BASE = '/api'; // Vite proxy should send this to http://localhost:4000
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://csia-q91n.onrender.com/api';
 
 // Small helper to reduce boilerplate
 async function fetchJson(url, options = {}) {
@@ -696,3 +696,4 @@ export default function App() {
 
   return <div className="app-root">{content}</div>;
 }
+
